@@ -1,0 +1,162 @@
+\chapter{Ecuación de Bargmann-Wigner}
+\label{chap:EcBargmannWigner}
+
+\section{Ecuación de Bargmann-Wigner libre}
+\label{EBWL}
+
+\subsection{Introducción}
+\label{sec:IntroEBW}
+
+Las ecuaciones de Bargmann-Wigner\cite{BargmannWigner} describen un sistema de ecuaciones de onda relativistas de espín arbitrario. 
+En el formalismo de Bargmann-Wigner el estado de un sistema cuántico relativista, de masa $m$ y espín $s\geq \sfrac{1}{2}$ queda descrito por un \textit{multiespinor} totalmente simétrico de grado $2s$: \citep{Lurie,GreinerRQM}
+$$ \psi_{\alpha \beta \ldots \tau}(x^{\mu})$$
+que satisface ecuaciones tipo Dirac en cada uno de sus $2s$ índices:
+
+\begin{equation}\label{eq:BargmannWigner}
+\begin{array}{c}
+\left(i\slashed{\partial}-m \right)_{\alpha \alpha'}\psi_{\alpha' \beta \ldots \tau}=0\\
+\left(i\slashed{\partial}-m \right)_{\beta \beta'}\psi_{\alpha \beta' \ldots \tau}=0\\
+\vdots \\
+\end{array}
+\end{equation}
+Se observa que cuando $s=\sfrac{1}{2}$ el sistema (\ref{eq:BargmannWigner}) se reduce a la ecuación de Dirac (\ref{eq:ED}).
+
+\subsection[Caso libre con \texorpdfstring{$s=1$}{s=1} (Ec. Proca)]{Caso libre con \texorpdfstring{$s=1$}{s=1} (Ec. Proca)\footnote[$\dagger$]{El contenido de esta subsección traza fielmente el procedimiento seguido por \citep{Lurie} en la realización del mismo cálculo; la presente subsec. puede considerarse una traducción a lenguaje covariante moderno de lo realizado en dicha fuente.}}
+\label{subsec:EBWs1}
+
+En el caso $s=1$ el sistema (\ref{eq:BargmannWigner}) se reduce a la pareja de ecuaciones
+
+\begin{equation}
+\begin{array}{rl}
+\left(i\slashed{\partial}-m \right)_{\alpha \alpha'}\psi_{\alpha' \beta}&=0,\\
+\left(i\slashed{\partial}-m \right)_{\beta \beta'}\psi_{\alpha \beta'}&=0,\\
+\end{array}
+\end{equation}
+o equivalentemente
+\begin{equation}\label{BWs1}
+\begin{array}{rl}
+\left(i\gamma^\mu \partial_\mu -m\right)\psi &=0,\\[5pt]
+\psi(i{\gamma^\mu}^{T} \overleftarrow{\partial_\mu} -m) &=0.\\
+\end{array}
+\end{equation}
+donde se reescribió al biespinor $\psi_{\alpha \beta}$ como una matriz simétrica $\psi$ de $4 \times 4$ y se utilizó el hecho de que $\psi_{\alpha\beta}=\psi_{\beta\alpha}$.
+
+El significado físico de las ecuaciones (\ref{BWs1}) se hace visible al desarrollar la matriz $\psi$ en términos de las diez matrices simétricas $\gamma^\mu C$ y $\sigma^{\mu \nu} C$:
+\begin{equation}\label{ExpansionPsi}
+\psi(x)=mA_\lambda(x) \gamma^\lambda C+\frac{1}{2}F_{\lambda \nu}(x)\sigma^{\lambda \nu} C
+\end{equation}
+donde $C$ es el operador de conjugación de carga, $\sigma^{\mu \nu}=\frac{i}{2}\left[\gamma^{\mu},\gamma^{\nu} \right]$, y $A_\mu$ y $F_{\mu \nu}$ son campos vectoriales y tensoriales antisimétricos de segundo orden, respectivamente. Insertando (\ref{ExpansionPsi}) en (\ref{BWs1}) y sumando las ecuaciones resultantes se obtiene
+
+\begin{equation}\label{}
+\begin{array}{rcl}
+im\left[\gamma^\mu, \gamma^\lambda \right]C \partial_\mu A_\lambda + \frac{i}{2}\left[\gamma^\mu, \sigma^{\lambda\nu}\right]C\partial_\mu F_{\lambda \nu}\quad & & \\[5pt]
+-2m^2 \gamma^\lambda C A_\lambda -m \sigma^{\lambda\nu}CF_{\lambda \nu} & = & 0,
+\end{array}
+\end{equation}
+donde adicionalmente se utilizó la relación ${\gamma^\mu}^{T}=-C^{-1}\gamma^\mu C$. Haciendo uso de $\sigma^{\mu\nu}=\frac{i}{2}\left[ \gamma^mu, \gamma^\nu \right]$ y $\left[\gamma^\mu,\sigma^{\lambda \nu}\right]=2i(\eta^{\mu\lambda}\gamma^\nu-\eta^{\mu\nu}\gamma^\lambda)$ se deduce entonces
+
+\begin{equation}\label{}
+-2\gamma^\nu C(\partial^\lambda F_{\lambda \nu}+m^2 A_\nu)-m \sigma^{\lambda\nu}C (2\partial_\nu A_\lambda + F_{\nu\lambda})=0
+\end{equation}
+de donde se extraen las \textbf{ecuaciones de Maxwell masivas}:
+\begin{subequations}\label{EcMaxMas}
+ \begin{eqnarray}
+  F_{\lambda \nu} & = & \partial_\lambda A_\nu - \partial_\nu A_\lambda \label{EcMaxMasA}\\
+  \partial^{\lambda}F_{\lambda \nu} & = & -m^2 A_\nu. \label{EcMaxMasB}
+\end{eqnarray}
+\end{subequations}
+Las ecuaciones (\ref{EcMaxMas}) son mejor conocidas como las \textbf{ecuaciones de Proca}\citep{Proca,GreinerRQM}. En el caso masivo ($m\neq 0$), (\ref{EcMaxMasB}) permite \textit{deducir} la condición de norma de Lorenz:
+\begin{equation}\label{NormaLorenz}
+ \partial^\mu A_\mu =0
+\end{equation}
+con lo cual es posible expresar (\ref{EcMaxMasA}-\ref{EcMaxMasB}) en términos únicamente dependientes del potencial vectorial $A^\mu$:
+\begin{subequations}\label{EcMaxMasVectorial}
+ \begin{align}
+  \partial^\mu A_\mu &=0,\\
+  \partial^2 A_\mu  &=-m^2 A_\mu.
+ \end{align}
+\end{subequations}
+
+\subsection{Caso libre con \texorpdfstring{$m=0$}{m=0} (Electromagnetismo)}
+\label{subsec:EBWm0}
+
+Cuando $m=0$ las ecuaciones (\ref{EcMaxMas}) reproducen las las ecuaciones de Maxwell usuales en el vacío:
+\begin{subequations}\label{EcMaxNoMas}
+ \begin{eqnarray}
+  F_{\mu\nu} & = & \partial_\mu A_\nu -\partial_\nu A_\mu,\\
+  \partial^{\mu}F_{\mu\nu}&=&0,
+ \end{eqnarray}
+\end{subequations}
+o equivalentemente, en función sólo de potencial vectorial:
+\begin{equation}\label{EcMaxNoMasVectorial}
+ \partial^2 A_\mu-\partial_\mu (\partial^\nu A_\nu)=0.\\
+\end{equation}
+
+Las ecuaciones (\ref{EcMaxNoMas}) y (\ref{EcMaxNoMasVectorial}) son invariantes ante una transformación de norma $A_\mu \rightarrow A_\mu+\partial_\mu \phi$ con la cual es posible reproducir la condición (\ref{NormaLorenz}), obteniéndose así la ecuación de onda usual del potencial electromagnético en el vacío
+\begin{equation}\label{EcOndaAVacio}
+ \partial^2 A_\mu =0.
+\end{equation}
+En la obtención de (\ref{EcOndaAVacio}) la condición de Lorenz no es consecuencia de las ecuaciones para $F$ y $A$, sino que debe de ser impuesta adicionalmente a través de la transformación de norma correspondiente, y la selección de una transformación de norma distinta (e.g. norma de radiación) modificaría la forma final de la ecuación de onda.\cite{Lurie}
+
+\section{Ecuación de Bargmann-Wigner con interacción}
+\label{sec:EBWI}
+
+El análisis del efecto de un campo externo $B_\mu$ sobre el sistema de estudio se realiza mediante la inserción de la sustitución mínima (ver subsec. \ref{subsec:MatricesGamma}): $p_\mu \rightarrow p_\mu - eB_\mu$\footnotemark, donde $e$ es un coficiente que mide la intensidad de la interacción de $psi$ con $B$. En el caso del sistema con $s=1$ descrito en la sección (\ref{sec:IntroEBW}) la sustitución mínima arroja la pareja de ecuaciones:
+\footnotetext{Se utiliza $B$ en lugar del usual $A$ para el potencial externo debido a que $A$ será, como en las secs. \ref{subsec:EBWs1} y \ref{subsec:EBWm0}, el campo vectorial en términos del cual se expandirá $\psi$.}
+\begin{equation}\label{BWs1CI}
+\begin{array}{rl}
+\left(i\gamma^\mu \partial_\mu-e\gamma^\mu B_\mu -m\right)\psi &=0,\\[5pt]
+\psi(i{\gamma^\mu}^{T} \overleftarrow{\partial_\mu}-e{\gamma^\mu}^{T} B_\mu -m) &=0.\\
+\end{array}
+\end{equation}
+
+Expandiendo $\psi$ en lo anterior como en (\ref{ExpansionPsi}): $\psi=mA_\lambda \gamma^\lambda C+\frac{1}{2}F_{\lambda\nu}\sigma^{\lambda \nu}C$, con ${\gamma^\mu}^{T}=-C^{-1}\gamma^\mu C$ y sumando ambos miembros de (\ref{BWs1CI}) se obtiene, tras las manipulaciones correspondientes, la pareja de ecuaciones:
+\begin{subequations}\label{EcMaxMasCI}
+ \begin{eqnarray}
+  F_{\lambda \nu} & = & \partial_\lambda A_\nu - \partial_\nu A_\lambda -ie(A_\lambda B_\nu - A_\nu B_\lambda)\label{EcMaxMasCIA}\\
+  (\partial^{\lambda}+ieB^\lambda)F_{\lambda \nu} & = & -m^2 A_\nu. \label{EcMaxMasCIB}
+\end{eqnarray}
+\end{subequations}
+
+Las expresiones (\ref{EcMaxMasCI}) son las ecuaciones de movimiento para los campos $A$ y $F$ asociados a $\psi$ en el formalismo de Bargmann-Wigner, donde adicionalmente se ha introducido en (\ref{BWs1}) una interacción mínima con un campo vectorial $B$.
+
+La pareja de ecuaciones (\ref{EcMaxMasCIA}-\ref{EcMaxMasCIB}) puede expresarse de manera compacta mediante el uso de la \textbf{derivada covariante de norma}:
+\begin{equation}\label{DerCovNorma}                                                                                                                          
+D^\mu\equiv(\partial^\mu+ieB^\mu),
+\end{equation}
+con lo cual (\ref{EcMaxMasCI}) adquiere la forma (\ref{EcMaxMas}) con la sustitución $\partial \rightarrow D$:
+\begin{subequations}\label{EcMaxMasCICov}
+ \begin{eqnarray}
+  F_{\lambda \nu} & = & D_\lambda A_\nu - D_\nu A_\lambda,\label{EcMaxMasCIDA}\\
+  D^{\lambda}F_{\lambda \nu} & = & -m^2 A_\nu. \label{EcMaxMasCIDB}
+\end{eqnarray}
+\end{subequations}
+
+La sustitución $\partial \rightarrow D$ introduce algunas sutilezas que impiden copiar el análisis realizado la sección \ref{sec:IntroEBW} para el caso libre; si $m\neq 0$ la aplicación de $D^\nu$ a (\ref{EcMaxMasCIDB}) en general \textbf{no} permite deducir una «condición de Lorenz generalizada»:
+
+\begin{equation}\label{LorenzGeneralizada}
+ D^\mu A_\mu\neq0.
+\end{equation}
+
+Lo anterior se debe a que en general $D^{\mu}$ y $D^{\nu}$ no conmutan entre sí. Insertando (\ref{EcMaxMasCIA}) en (\ref{EcMaxMasCIDB}) se obtiene la «ecuación de onda» que rige el comportamiento de nuestro sistema masivo con espín $1$ en el caso interactivo:
+\begin{equation}\label{EcOndaCovariante}
+ D^2 A_\mu-D_\mu (D^\nu A_\nu)=-m^2 A_\nu.\\
+\end{equation}
+%En (\ref{EcOndaCovariante}) se utilizó $D^\lambda D_\mu A_\lambda =D_\mu D^\lambda A_\lambda$, hecho fácilmente verificable. 
+Las ecuaciones (\ref{LorenzGeneralizada}) y (\ref{EcOndaCovariante}) son análogas a la pareja (\ref{EcMaxMasVectorial}) con la aplicación de la traducción $\partial \rightarrow D$.
+
+En el caso no masivo ($m=0$) las ecuaciones (\ref{EcMaxMasCICov}) se simplifican:
+
+\begin{subequations}\label{EcMaxNoMasCI}
+ \begin{eqnarray}
+  F_{\mu\nu} & = & D_\mu A_\nu -D_\nu A_\mu,\\
+  D^{\mu}F_{\mu\nu}&=&0,
+ \end{eqnarray}
+\end{subequations}
+o en función sólo del potencial vectorial:
+\begin{equation}\label{EcMaxNoMasVectorialCI}
+ D^2 A_\mu-D_\mu (D^\nu A_\nu)=0.\\
+\end{equation}
+Al igual que en el caso sin interacción con el campo externo $B$, cuando $m=0$ resulta imposible obtener la condición de «norma» (\ref{LorenzGeneralizada}) como consecuencia de las ecuaciones de movimiento. (ANOTACIONES: ¿Ésta puede ser impuesta, bajo qué condiciones? ¿Cómo se ven las nuevas transformaciones de norma, si es que las hay?). 
+
+MÁS COSAS A INVESTIGAR: ¿Qué chingados significa físicamente la traducción $\partial \rightarrow D$? y ¿qué jodidos nos dice del comportamiento físico del sistema en presencia de $B$?
